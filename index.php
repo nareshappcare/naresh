@@ -1,8 +1,11 @@
+This is my Mysql query .please find the mongodb query .mongodb documebts.
+
+
 SELECT u.id,u.user_id,u.fullname,u.profile_pic,u.email, MAX(c.id) as ids FROM chat_history c INNER JOIN users u ON (u.user_id = c.to_id OR u.user_id = c.from_id) WHERE (c.to_id ='$uid' OR c.from_id = '$uid') AND u.user_id !='$uid'  GROUP BY u.user_id ORDER BY ids DESC
 
 
 
-above query converted to MongoDB query.
+above query converted to MongoDB query. i tried the below mongodb query.
 
 
 $resultData =$this->mongo_db->aggregate('users',[
